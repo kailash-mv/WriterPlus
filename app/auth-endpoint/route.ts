@@ -53,8 +53,6 @@ export async function POST(req: NextRequest) {
       { status: 401 }
     );
   }
-
-  // Check if the user is authorized to access the specified room
   const usersInRoom = await adminDb
     .collectionGroup("rooms")
     .where("userId", "==", sessionClaims?.email)

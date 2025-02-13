@@ -39,6 +39,7 @@
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^1.1.2",
     "vercel": "^39.2.5",
+    "y-mongodb": "^0.1.11",
     "y-websocket": "^2.1.0",
     "yjs": "^13.6.21"
   },

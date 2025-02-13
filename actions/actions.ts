@@ -1,7 +1,6 @@
 "use server";
 
 import { adminDb } from "@/firebase-admin";
-import liveblocks from "@/components/LiveCursorEdit/liveblocks";
 import { auth } from "@clerk/nextjs/server";
 
 export async function createNewDocument() {
@@ -54,15 +53,12 @@ export async function deleteDocument(roomId: string) {
 
     await batch.commit();
 
-    await liveblocks.deleteRoom(roomId);
-
     return { success: true };
   } catch (error) {
     console.error(error);
     return { success: false };
   }
 }
-
 export async function inviteUserToDocument(roomId: string, email: string) {
   const { userId } = await auth();
   if (!userId) {
